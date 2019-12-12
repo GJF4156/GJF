@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">example</string>
+    <!--  字体图标  -->
+    <string name="AR">&#xe608;</string>
+    <string name="yuying">&#xe607;</string>
+    <string name="huishou">&#xe633;</string>
+    <string name="home_icon">&#xe604;</string>
+    <string name="sort_icon">&#xe7f9;</string>
+    <string name="shop_icon">&#xe667;</string>
+    <string name="me_icon">&#xe636;</string>
+    <!--  页面文字  -->
+    <string name="xiaozhishi">知识小科普</string>
+</resources>

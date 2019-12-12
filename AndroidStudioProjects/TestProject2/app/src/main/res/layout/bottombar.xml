@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/home_tv_bar"
+        android:text="@string/home_tv_bar"
+        android:drawableTop="@mipmap/home"
+        style="@style/bottomBar"/>
+    <TextView
+        android:id="@+id/sort_tv_bar"
+        android:text="@string/sort_tv_bar"
+        android:drawableTop="@mipmap/sort"
+        style="@style/bottomBar"/>
+    <TextView
+        android:id="@+id/shop_tv_bar"
+        android:text="@string/shop_tv_bar"
+        android:drawableTop="@mipmap/shop"
+        style="@style/bottomBar"/>
+    <TextView
+        android:id="@+id/me_tv_bar"
+        android:text="@string/me_tv_bar"
+        android:drawableTop="@mipmap/me"
+        style="@style/bottomBar"/>
+</LinearLayout>

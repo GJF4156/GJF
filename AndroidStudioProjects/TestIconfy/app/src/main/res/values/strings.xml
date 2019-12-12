@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestIconfy</string>
+    <string name="home">首页</string>
+    <string name="sort">分类</string>
+    <string name="shop">商城</string>
+    <string name="my">我的</string>
+</resources>

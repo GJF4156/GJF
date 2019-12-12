@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="3dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <com.item.week10.Iconfont.IconfontTextview
+            android:id="@+id/icon_font_home"
+            style="@style/tab_icon_style"
+            android:text="@string/icon_home"
+            />
+        <TextView
+            android:id="@+id/icon_text_home"
+            android:text="@string/text_home"
+            android:textSize="12sp"
+            style="@style/tab_icon_style"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <com.item.week10.Iconfont.IconfontTextview
+            android:id="@+id/icon_font_sort"
+            android:text="@string/icon_sort"
+            style="@style/tab_icon_style"
+            />
+        <TextView
+            android:id="@+id/icon_text_sort"
+            android:text="@string/text_sort"
+            android:textSize="12sp"
+            style="@style/tab_icon_style"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <com.item.week10.Iconfont.IconfontTextview
+            android:id="@+id/icon_font_shop"
+            android:text="@string/icon_shop"
+            style="@style/tab_icon_style"
+           />
+        <TextView
+            android:id="@+id/icon_text_shop"
+            android:text="@string/text_shop"
+            android:textSize="12sp"
+            style="@style/tab_icon_style"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <com.item.week10.Iconfont.IconfontTextview
+            android:id="@+id/icon_font_me"
+            android:text="@string/icon_me"
+            style="@style/tab_icon_style"
+            />
+        <TextView
+            android:id="@+id/icon_text_me"
+            android:text="@string/text_me"
+            android:textSize="12dp"
+            style="@style/tab_icon_style"/>
+    </LinearLayout>
+
+
+</LinearLayout>

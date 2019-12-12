@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/kepu_image"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@mipmap/news_image"
+        android:padding="5px" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/Article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="文章标题"
+            android:textColor="@color/Article_title_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Article_describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="文章内容"
+            android:textColor="@color/Article_describe_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Article_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/date_32"
+            android:gravity="center_vertical"
+            android:hint="发表时间"
+            android:textColor="@color/Article_date_color"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

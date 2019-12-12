@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">week10</string>
+    <string name="icon_home">&#xe7fd;</string>
+    <string name="text_home">首页</string>
+    <string name="icon_sort">&#xe7fc;</string>
+    <string name="text_sort">分类</string>
+    <string name="icon_shop">&#xe7fa;</string>
+    <string name="text_shop">商城</string>
+    <string name="icon_me">&#xe7fb;</string>
+    <string name="text_me">我的</string>
+</resources>

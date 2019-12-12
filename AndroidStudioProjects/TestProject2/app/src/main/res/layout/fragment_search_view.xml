@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.SortFragment">
+    <!--
+    //下面两个属性设置隐藏下划线
+     android:queryBackground="@null"
+     android:submitBackground="@null"
+     -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/searchview_radious"
+        android:iconifiedByDefault="false"
+        android:padding="5dp"
+        android:queryBackground="@null"
+        android:queryHint="搜索内容"
+        android:submitBackground="@null" />
+
+    <ListView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/searchView"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

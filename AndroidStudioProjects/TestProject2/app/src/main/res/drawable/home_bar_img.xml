@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中用深绿色的图-->
+    <item android:state_pressed="true" android:drawable="@mipmap/home1"/>
+    <!--未选中用浅绿色的图-->
+    <item android:drawable="@mipmap/home"/>
+</selector>

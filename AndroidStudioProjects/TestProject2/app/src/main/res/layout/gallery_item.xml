@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/searchView"
+    android:background="#f4f4f4"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/searchTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:background="#f4f4f4"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:textSize="25sp"
+        android:text="搜索"/>
+
+    <HorizontalScrollView
+        android:id="@+id/hsv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="#fff"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/image_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="#F4F4F4"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/kehuishoulaji"
+                android:layout_width="300dp"
+                android:layout_height="580dp"
+                android:layout_gravity="center_vertical"
+                android:padding="20dp"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/layer_list"
+                android:src="@drawable/kehuishoulaji" />
+
+            <ImageView
+                android:id="@+id/chuyulaji"
+                android:layout_width="300dp"
+                android:layout_height="580dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:padding="20dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/layer_list"
+                android:src="@drawable/chuyulaji" />
+
+            <ImageView
+                android:id="@+id/youhailaji"
+                android:layout_width="300dp"
+                android:layout_height="580dp"
+                android:padding="20dp"
+                android:background="@drawable/layer_list"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/youhailaji" />
+
+            <ImageView
+                android:id="@+id/qitalaji"
+                android:layout_width="300dp"
+                android:layout_height="580dp"
+                android:padding="20dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/layer_list"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/qitalaji" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

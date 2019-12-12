@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ServiceActivity">
+
+    <Button
+        android:id="@+id/change_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHANGE TEXT"
+        android:background="#03A9F4"/>
+    <Button
+        android:id="@+id/change2_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHANGE2 TEXT"
+        android:background="#03A9F4"/>
+    <Button
+        android:id="@+id/change3_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHANGE3 TEXT"
+        android:background="#03A9F4"/>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你好！"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"/>
+
+
+</LinearLayout>
