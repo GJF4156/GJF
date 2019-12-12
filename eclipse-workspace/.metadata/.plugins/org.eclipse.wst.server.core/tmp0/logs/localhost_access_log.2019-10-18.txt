@@ -1,0 +1,2 @@
+127.0.0.1 - - [18/Oct/2019:16:38:14 +0800] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [18/Oct/2019:16:38:16 +0800] "GET /mybatis/WEB-INF/classes/com/itguo/test/testMybatis.java HTTP/1.1" 404 1047

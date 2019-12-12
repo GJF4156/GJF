@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-20 10:53:04 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.lin.lostandfound.model.Systemlog" table="systemlog" catalog="LostAndFound">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="string">
+            <column name="Description">
+                <comment>?&#168;&#168;??</comment>
+            </column>
+        </property>
+        <property name="exceptionCode" type="string">
+            <column name="ExceptionCode">
+                <comment>?&#168;&#172;???&#168;&#178;??</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="10">
+                <comment>?&#168;&#164;??</comment>
+            </column>
+        </property>
+        <property name="requestIp" type="string">
+            <column name="RequestIp" length="50">
+                <comment>???&#168;&#174;IP</comment>
+            </column>
+        </property>
+        <property name="exceptionDetail" type="string">
+            <column name="ExceptionDetail">
+                <comment>?&#168;&#172;???????&#168;&#186;?&#168;&#166;</comment>
+            </column>
+        </property>
+        <property name="method" type="string">
+            <column name="Method">
+                <comment>&#161;&#164;?&#161;&#164;&#161;&#167;</comment>
+            </column>
+        </property>
+        <property name="params" type="string">
+            <column name="Params">
+                <comment>????</comment>
+            </column>
+        </property>
+        <property name="createBy" type="string">
+            <column name="CreateBy">
+                <comment>???&#161;&#167;??</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" not-null="true">
+                <comment>???&#161;&#167;????</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

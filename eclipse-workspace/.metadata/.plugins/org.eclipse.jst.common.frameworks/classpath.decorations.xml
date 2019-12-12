@@ -1,0 +1,7 @@
+<classpath>
+  <container id="demo!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/eclipse-workspace/demo/WebContent/WEB-INF/lib/spring-jdbc-5.1.0.RELEASE.jar">
+      <source-attachment-path>D:/SpringJar包/spring-framework-5.1.0.RELEASE/libs/spring-jdbc-5.1.0.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

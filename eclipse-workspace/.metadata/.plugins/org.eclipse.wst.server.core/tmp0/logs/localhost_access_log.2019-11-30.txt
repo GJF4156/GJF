@@ -1,0 +1,11 @@
+127.0.0.1 - - [30/Nov/2019:14:36:10 +0800] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:37:26 +0800] "GET /SSNProject/user/queryUserById?id=30 HTTP/1.1" 404 1111
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:37:26 +0800] "GET /favicon.ico HTTP/1.1" 404 1085
+127.0.0.1 - - [30/Nov/2019:14:39:27 +0800] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:39:34 +0800] "GET /SSNProject/user/queryUserById?id=30 HTTP/1.1" 404 1111
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:39:38 +0800] "GET /SSNProject/user/queryUserById?id=30 HTTP/1.1" 404 1111
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:40:36 +0800] "GET /user/queryUserById?id=30 HTTP/1.1" 404 1096
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:40:50 +0800] "GET /SSMProject/user/queryUserById?id=30 HTTP/1.1" 500 5425
+127.0.0.1 - - [30/Nov/2019:14:43:55 +0800] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:44:13 +0800] "GET /SSMProject/user/queryUserById?id=30 HTTP/1.1" 500 5425
+0:0:0:0:0:0:0:1 - - [30/Nov/2019:14:46:52 +0800] "GET /SSMProject/user/queryUserById?id=30 HTTP/1.1" 200 166

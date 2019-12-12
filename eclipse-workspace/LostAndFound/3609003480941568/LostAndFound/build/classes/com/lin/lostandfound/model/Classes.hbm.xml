@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-20 10:53:04 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.lin.lostandfound.model.Classes" table="classes" catalog="LostAndFound">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="classNo" type="string">
+            <column name="ClassNo" length="10" not-null="true">
+                <comment>&#176;&#224;&#188;&#182;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="major" type="string">
+            <column name="Major" length="30" not-null="true">
+                <comment>&#215;&#168;&#210;&#181;</comment>
+            </column>
+        </property>
+        <property name="academyCode" type="string">
+            <column name="AcademyCode" length="8" not-null="true">
+                <comment>&#203;&#249;&#202;&#244;&#182;&#254;&#188;&#182;&#209;&#167;&#212;&#186;&#180;&#250;&#194;&#235; (&#205;&#226;&#188;&#252;&#163;&#169;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

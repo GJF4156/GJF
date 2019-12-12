@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+<context:component-scan base-package="com.itguo.entity"></context:component-scan>
+	<!-- springIoc容器 一个文件中可以同时有多个bean 每个bean都有唯一标识符,使用时根据标识符识别
+		每个Bean相当于:Student student=new Student();
+	-->
+	<!-- id:唯一标识符 class:指定类别 -->
+	<bean id="student" class="com.itguo.entity.Student">
+		<!-- property:对象的属性 name:属性名 value:属性值 -->
+		
+	</bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.itguo.mapper.PostMapper">
+	
+	
+		<select id="selectAllPostById" resultType="com.itguo.model.Post">
+			select * from post
+		</select>
+		<delete id="deletePost" parameterType="int">
+			delete from post where pid=#{pid}
+		</delete>
+		
+		<insert id="insertPost" parameterType="com.itguo.model.Post">
+			insert into post(username,title,context) value (#{username},#{title},#{context})
+		</insert>
+	</mapper>

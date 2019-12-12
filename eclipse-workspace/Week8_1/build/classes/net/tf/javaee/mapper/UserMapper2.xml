@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="net.tf.javaee.mapper.UserMapper2">
+
+		<select id="queryUserByUsername" parameterType="String" resultMap="userWithPost">
+			SELECT u.uid,u.username,p.* FROM user u,post p WHERE u.uid=p.uid AND u.username=#{username}
+		</select>
+		<resultMap type="net.tf.javaee.model.User2" id="userWithPost">
+			<id property="uid" column="uid" />
+			<result property="username" column="username" />
+			<collection property="postlist" ofType="net.tf.javaee.model.Post"> 
+				<id property="postid" column="postid"/>
+				<result property="title" column="title" />
+			</collection>
+			
+		
+		</resultMap>
+	</mapper>
