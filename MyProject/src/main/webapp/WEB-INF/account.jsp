@@ -17,7 +17,7 @@
 <body>
 <header data-am-widget="header" class="am-header am-header-default header">
     <div class="am-header-left am-header-nav">
-        <a href="javascript:history.go(-1)" class="">
+        <a href="${pageContext.request.contextPath}/member" class="">
             <i class="am-header-icon am-icon-angle-left"></i>
         </a>
     </div>
@@ -34,9 +34,7 @@
     <a href="${pageContext.request.contextPath}/toBackPassword">
         <li><i class="am-icon-cart-arrow-down"></i><span>找回密码</span></li>
     </a>
-
 </ul>
-
-
+<span height="30" style="font-size: 25px;color: green;text-align: center">${msg}</span>
 </body>
 </html>

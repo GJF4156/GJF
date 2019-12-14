@@ -16,6 +16,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 注册
+     * @param user
+     * @param model
+     * @return
+     */
     @RequestMapping("/insertUser")
     public String insertUser(User user, Model model) {
         System.out.println(user);
@@ -28,6 +34,14 @@ public class UserController {
         }
     }
 
+    /**
+     * 登陆
+     * @param phone
+     * @param password
+     * @param model
+     * @param session
+     * @return
+     */
     @RequestMapping("/login")
     public String login(String phone, String password, Model model, HttpSession session) {
         User user = userService.selectUser(phone, password);
@@ -40,8 +54,14 @@ public class UserController {
         }
     }
 
-    @RequestMapping("/upsateUser")
-    public String updateUser(Model model, HttpServletRequest request) {
+    /**
+     * 找回密码
+     * @param model
+     * @param request
+     * @return
+     */
+    @RequestMapping("/toBackPassword")
+    public String toBackPassword(Model model, HttpServletRequest request) {
         User user=new User();
         user.setPhone(request.getParameter("phone"));
         user.setEmail(request.getParameter("email"));
@@ -61,5 +81,18 @@ public class UserController {
         }
         model.addAttribute("msg","该用户不存在，请确认后再试！");
         return "toBackPassword";
+    }
+
+    @RequestMapping("/updateUserInfo")
+    public String updateUserInfo(User user,Model model,HttpServletRequest request,HttpSession session){
+        user.setUid(((User) request.getSession().getAttribute("USER")).getUid());
+        int rows=userService.updateUser(user);
+        if (rows>0){
+            session.setAttribute("USER", user);
+            model.addAttribute("msg","修改信息成功");
+            return "account";
+        }
+        model.addAttribute("msg","修改信息失败！");
+        return "userInfo";
     }
 }

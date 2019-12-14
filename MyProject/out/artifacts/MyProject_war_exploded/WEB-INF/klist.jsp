@@ -16,17 +16,6 @@
 
 	</head>
 	<body>
-		<header data-am-widget="header" class="am-header am-header-default header">
-		  <div class="am-header-left am-header-nav">
-		     <a href="javascript:history.go(-1)" class="">
-		       <i class="am-header-icon am-icon-angle-left"></i>
-		     </a>
-		  </div>
-		  <h1 class="am-header-title"> <a href="#title-link" class="" style="color: #333;">校园跑腿</a></h1>
-		  <div class="am-header-right am-header-nav">
-		     <a href="#right-link" class=""> </a>
-		  </div>
-	  </header>
 	  <div class="communityPage-main">
 	  	<div class="communityPage-info">
 	  		<img class="communityPage-img" src="images/boy.png">
@@ -35,7 +24,7 @@
 	  			<p class="communityPage-num"><label>话题<span class="communityPage-topic-num cmn-theme-color">0</span></label></p>
 	  		</div>
 	  	</div>
-	  	<div class="communityPage-topic cmn-theme-color-active" id="communityPage-topic"><a class="active">全部</a></div>
+	  	<div class="communityPage-topic cmn-theme-color-active" id="communityPage-topic"><a class="active" style="margin-left: 10px">全部帖子</a></div>
 	  </div>
 	  <div class="nokeshuo">
 	  <div class="am-g am-intro-bd">

@@ -24,7 +24,7 @@
     </a>
     <div style="width: 100%">
         <div class="member-infor">
-            您好！<a href="" style="color:#1E9FFF;font-size: x-large">${USER.username}</a>
+            您好！<a href="" style="color:#1E9FFF;font-size: x-large">${sessionScope.USER.username}</a>
         </div>
         <div class="member-infor" style="float: right">
             <a href=" "

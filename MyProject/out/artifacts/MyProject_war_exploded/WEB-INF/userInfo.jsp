@@ -33,7 +33,7 @@
 <div class="Login">
     <div>
         <div class="Login_bottom">
-            <form id="registForm" action="${pageContext.request.contextPath}/">
+            <form id="registForm" action="${pageContext.request.contextPath}/User/updateUserInfo">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td height="60" align="left" valign="middle">
@@ -62,7 +62,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td height="30" style="font-size: 25px;color: red;text-align: center">aa${msg}</td>
+                        <td height="30" style="font-size: 25px;color: red;text-align: center">${msg}</td>
                     </tr>
                 </table>
             </form>

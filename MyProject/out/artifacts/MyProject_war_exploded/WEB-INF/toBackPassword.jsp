@@ -27,7 +27,7 @@
 <div class="Login">
     <div>
         <div class="Login_bottom">
-            <form id="registForm" action="${pageContext.request.contextPath}/User/upsateUser" method="post">
+            <form id="registForm" action="${pageContext.request.contextPath}/User/toBackPassword" method="post">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td height="60" align="left" valign="middle">
