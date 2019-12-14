@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ityuan.dao.OrderDao">
+
+    <!--查询所有订单-->
+    <select id="selectAllOrder" resultType="Order">
+        select * from orders where order_state=0 order by oid desc
+    </select>
+
+    <!--插入订单-->
+    <insert id="insertOrder" parameterType="Order">
+        INSERT INTO orders VALUES(#{oid},
+        #{uid},#{username},#{colId},
+        #{describe},#{address},#{other_requirements},
+        #{cost},"未处理",#{release_date},#{expect_time},-1)
+    </insert>
+    <!--查询单个订单-->
+    <select id="selectOrder" parameterType="int" resultType="Order">
+        select * from orders where oid=#{oid}
+    </select>
+
+    <!--更新订单-->
+    <update id="updateOrder" parameterType="Order">
+        UPDATE orders SET order_state=#{order_state},receipt=#{receipt} where oid=#{oid}
+    </update>
+    <!--根据receipt查询订单-->
+    <select id="selectOrderByReceipt" parameterType="int" resultType="Order">
+        select * from orders where receipt=#{receipt} order by oid desc
+    </select>
+
+    <!--根据订单状态查询订单-->
+    <select id="selectOrderByOrderState" parameterType="Order" resultType="Order">
+        select * from orders where order_state=#{order_state} and receipt=#{receipt} order by oid desc
+    </select>
+
+    <!--删除订单-->
+    <delete id="deleteOrder" parameterType="int">
+        delete from orders where oid=#{oid}
+    </delete>
+
+    <!--查询我发布的订单-->
+    <select id="selectMyOrder" parameterType="Order" resultType="Order">
+        select * from orders where uid=#{uid} and order_state=#{order_state} and receipt=#{receipt} order by oid desc
+    </select>
+
+    <select id="selectMorder" parameterType="Order" resultType="Order">
+        select * from orders
+        <where>
+            <if test="uid !=null and uid!=''">
+                and uid=#{uid}
+            </if>
+            <if test="order_state !=null and order_state !=''">
+                and order_state=#{order_state}
+            </if>
+            <if test="receipt != null and receipt != ''">
+                and receipt=#{receipt}
+            </if>
+        </where>
+        order by oid desc
+    </select>
+
+</mapper>

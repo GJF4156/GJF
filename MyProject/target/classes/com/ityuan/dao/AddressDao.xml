@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityuan.dao.AddressDao">
+    <select id="selectAllAddress" parameterType="int" resultType="Address">
+		select * from address where createuid=#{createuid} order by aid desc;
+	</select>
+
+	<insert id="insertAddress" parameterType="Address">
+		INSERT INTO address VALUES(#{aid},#{consignee},#{cphone},#{content},#{createuid})
+	</insert>
+
+	<delete id="deleteAddress" parameterType="int">
+		delete from address where aid=#{aid}
+	</delete>
+
+	<update id="updateAddress" parameterType="Address">
+		UPDATE address SET consignee=#{consignee}, cphone=#{cphone},content=#{content} where aid=#{aid}
+	</update>
+</mapper>
