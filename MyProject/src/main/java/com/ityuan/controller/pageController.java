@@ -1,7 +1,9 @@
 package com.ityuan.controller;
 
+import com.ityuan.pojo.Forum;
 import com.ityuan.pojo.News;
 import com.ityuan.pojo.Order;
+import com.ityuan.service.ForumService;
 import com.ityuan.service.NewsService;
 import com.ityuan.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +21,14 @@ public class pageController {
     OrderService orderService;
     @Autowired
     NewsService newsService;
+    @Autowired
+    private ForumService forumService;
 
     @RequestMapping("/index")
     public String index(Model model) {
         List<News> newsList = newsService.findAllNews();
-        for (News news:newsList){
-            model.addAttribute("NEWS_DATE",new SimpleDateFormat("yyyy-MM-dd").format(news.getDate()));
+        for (News news : newsList) {
+            model.addAttribute("NEWS_DATE", new SimpleDateFormat("yyyy-MM-dd").format(news.getDate()));
         }
         model.addAttribute("NEWS", newsList);
         return "index";
@@ -32,7 +36,7 @@ public class pageController {
 
     @RequestMapping("/run_pool")
     public String run_pool(Model model) {
-        Order order=new Order();
+        Order order = new Order();
         order.setOrder_state("未处理");
         order.setReceipt(-1);
         List<Order> orderList = orderService.queryOrderByOrderState(order);
@@ -46,7 +50,15 @@ public class pageController {
     }
 
     @RequestMapping("/klist")
-    public String klist() {
+    public String klist(Model model) {
+        List<Forum> forums = forumService.findAllForum();
+        if (forums.size() > 0) {
+            model.addAttribute("FORUMS", forums);
+            model.addAttribute("clu",forums.size());
+            return "klist";
+        }
+        model.addAttribute("msg", "还没有帖子，去分享自己的文章吧");
+        model.addAttribute("clu",0);
         return "klist";
     }
 
@@ -107,7 +119,6 @@ public class pageController {
 
     @RequestMapping("/update_address")
     public String update_address() {
-
         return "update_address";
     }
 
@@ -135,6 +146,7 @@ public class pageController {
     public String other() {
         return "other";
     }
+
     @RequestMapping("/address_2")
     public String address_2() {
         return "address_2";
@@ -158,6 +170,16 @@ public class pageController {
     @RequestMapping("/userInfo")
     public String userInfo() {
         return "userInfo";
+    }
+
+    @RequestMapping("/posting")
+    public String posting() {
+        return "posting";
+    }
+
+    @RequestMapping("/detail")
+    public String detail() {
+        return "detail";
     }
 
 }

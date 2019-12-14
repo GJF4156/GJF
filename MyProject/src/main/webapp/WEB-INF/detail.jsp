@@ -1,62 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-		 pageEncoding="utf-8"%>
+         pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>校园跑腿</title>
-		<meta name="description" content="校园跑腿" />
-		<meta name="keywords" content="校园跑腿"/>
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="css/amazeui.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<script type="text/javascript" src="js/jquery.min.js" ></script>
-		<script type="text/javascript" src="js/amazeui.min.js" ></script>
-		<script type="text/javascript" src="js/application.js" ></script>
+<head>
+    <meta charset="utf-8"/>
+    <title>校园跑腿</title>
+    <meta name="description" content="校园跑腿"/>
+    <meta name="keywords" content="校园跑腿"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/layui.css" media="all">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/application.js"></script>
 
-	</head>
-	<body>
-		<div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
-			  <ul class="am-slides">
-			      <li><img src="images/boy.png"> </li>
-			      <li><img src="images/boy.png"> </li>
-			  </ul> 
-		</div>
-		<div class="boy">
-			<h2>卤香滑鸡</h2>
-			<div class="price">
-				<b>￥30</b><span>（积分可抵扣5元）</span>
-			</div>
-			<div class="kucun">
-				<p>库存：1000</p>
-				<p>运费：免运费</p>
-			</div>
-		</div>
-		<div class="comment">
-			<h2>宝贝评价（0）</h2>
-			<ul>
-				<li><a hhref="">有图（0）</a></li>
-				<li><a hhref="">好评（0）</a></li>
-				<li><a hhref="">中评（0）</a></li>
-				<li><a hhref="">差评（0）</a></li>
-			</ul>
-		</div>
-        <div class="boy-con">
-        	<p>  排毒排便－香蕉牛奶汁</p>
-	      	<p>  适量加入牛奶调理，可以补充更多钙质，对于正在减肥中的女孩来说，也比较有饱足感。经常失眠或是容易经痛的女孩也可以喝喝看！</p>
-	      	<br />
-	      	<br />
-	      	<p>  止咳防晕－芒果汁</p>
-	      	<p>  退火利尿－椰子汁</p>
-	      	<p>  不过有的人会怕椰子的味道，也因为椰子水生冷寒性，因此女孩们如果想喝椰子水来消暑，或是肠胃不好的人，在喝之前还是要三思！</p>
-	      	<p>  水果之王－奇异果汁</p>
-	      	<img src="images/banner.jpg" />
+</head>
+<body>
+<div class="am-g am-intro-bd">
+    <div class="am-intro-left am-u-sm-3"><img src="${pageContext.request.contextPath}/images/p.png"/></div>
+    <div class="am-intro-right am-u-sm-9">
+        <div class="text">
+            <span style="float: left;color: black;font-size: 16px"><i>${param.publishUser}</i></span>
+            <span class="fr gray" style="margin-right: 2%">
+                                <i>回复<span class="communityPage-comment-num cmn-theme-color">0</span></i>
+                            </span>
         </div>
-		<div class="h50"></div>
-		<ul class="fixed-btn">
-			<li ><a href="" class="current">立即购买</a></li>
-			<li><a href="javascript:;">加入购物车</a></li>
-		</ul>
-		
-	</body>
+        <p style="font-size: 16px;color: #ff832c;text-align: left">${param.content}</p>
+        <div class="text">
+            <span class="fl">${param.date}</span>
+        </div>
+    </div>
+    <hr class="layui-bg-orange">
+    <textarea id="content" class="add_input" type="text" style="padding-left: 8px" placeholder="说点什么吧..." cols="10"
+              rows="2"></textarea>
+    <button type="button" style="float: right;margin-right: 25px;" class="layui-btn layui-btn-primary layui-btn-xs">回复
+    </button>
+</div>
+</body>
 </html>

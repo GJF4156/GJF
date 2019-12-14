@@ -5,15 +5,17 @@ import java.util.Date;
 public class Forum {
     private int fid;//帖子id
     private int publishUid;//发帖人id
+    private String publishUser;
     private String content;//帖子内容
-    private Date date;//发帖时间
+    private String date;//发帖时间
 
     public Forum() {
     }
 
-    public Forum(int fid, int publishUid, String content, Date date) {
+    public Forum(int fid, int publishUid, String publishUser, String content, String date) {
         this.fid = fid;
         this.publishUid = publishUid;
+        this.publishUser = publishUser;
         this.content = content;
         this.date = date;
     }
@@ -34,6 +36,14 @@ public class Forum {
         this.publishUid = publishUid;
     }
 
+    public String getPublishUser() {
+        return publishUser;
+    }
+
+    public void setPublishUser(String publishUser) {
+        this.publishUser = publishUser;
+    }
+
     public String getContent() {
         return content;
     }
@@ -42,11 +52,11 @@ public class Forum {
         this.content = content;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -55,8 +65,9 @@ public class Forum {
         return "Forum{" +
                 "fid=" + fid +
                 ", publishUid=" + publishUid +
+                ", publishUser='" + publishUser + '\'' +
                 ", content='" + content + '\'' +
-                ", date=" + date +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

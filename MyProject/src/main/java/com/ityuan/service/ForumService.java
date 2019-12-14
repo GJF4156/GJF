@@ -1,22 +1,22 @@
-package com.ityuan.dao;
+package com.ityuan.service;
 
 import com.ityuan.pojo.Forum;
 
 import java.util.List;
 
-public interface ForumDao {
+public interface ForumService {
     /**
-     * 查询所有帖子
+     * 查寻所有的帖子
      * @return
      */
-    public List<Forum> selectAllForum();
+    public List<Forum> findAllForum();
 
     /**
-     * 插入帖子
+     * 发表帖子
      * @param forum
      * @return
      */
-    public int insertForum(Forum forum);
+    public int createForum(Forum forum);
 
     /**
      * 删除帖子
@@ -24,5 +24,4 @@ public interface ForumDao {
      * @return
      */
     public int deleteForum(int fid);
-
 }
