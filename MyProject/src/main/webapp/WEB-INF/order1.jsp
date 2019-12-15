@@ -66,7 +66,7 @@
             </div>
             <div class="c-com-btn">
                 <a onclick="pay()">去付款</a>
-                <a onclick="lianxi()">联系跑腿员</a>
+                <a onclick="lianxi()">联系跑腿</a>
                 <a href="${pageContext.request.contextPath}/mOrder/deleteMorder?oid=${o.oid}">删除订单</a>
             </div>
         </c:forEach>

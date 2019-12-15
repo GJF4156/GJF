@@ -22,15 +22,12 @@
             <img src="${pageContext.request.contextPath}/images/p.png"/>
         </div>
     </a>
-    <div style="width: 100%">
-        <div class="member-infor">
-            您好！<a href="" style="color:#1E9FFF;font-size: x-large">${sessionScope.USER.username}</a>
-        </div>
-        <div class="member-infor" style="float: right">
-            <a href=" "
-               style="color:#FFB800;font-size:large;margin-right:25px;text-align: right">注销</a>
-        </div>
-
+    <div style="float: left; color: #fff;margin-left: 15px;margin-top: 50px;">
+        您好！<a href="" style="color:#1E9FFF;font-size: x-large">${sessionScope.USER.username}</a>
+    </div>
+    <div style="float: right; color: #fff;margin-left: 15px;margin-top: 50px;">
+        <a href=" "
+           style="color:#FFB800;font-size:large;margin-right:25px;">注销</a>
     </div>
 </div>
 <ul class="member-nav">

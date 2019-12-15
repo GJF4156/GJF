@@ -39,7 +39,7 @@ public class MyOrderController {
                     model.addAttribute("ORDERS", orders);
                     return "order1";
                 }
-                model.addAttribute("msg", "暂无订单");
+                model.addAttribute("msg", "暂无未处理订单");
                 return "order1";
             case 1:
                 order.setOrder_state("已完成");
@@ -48,7 +48,7 @@ public class MyOrderController {
                     model.addAttribute("ORDERS", orders1);
                     return "order1";
                 }
-                model.addAttribute("msg", "暂无订单");
+                model.addAttribute("msg", "暂无已完成订单");
                 return "order1";
             case 2:
                 order.setOrder_state("进行中");
@@ -57,10 +57,10 @@ public class MyOrderController {
                     model.addAttribute("ORDERS", orders2);
                     return "order1";
                 }
-                model.addAttribute("msg", "暂无订单");
+                model.addAttribute("msg", "暂无进行中订单");
                 return "order1";
             default:
-                model.addAttribute("msg", "暂无订单");
+                model.addAttribute("msg", "您还没有任何订单");
                 return "order1";
         }
     }

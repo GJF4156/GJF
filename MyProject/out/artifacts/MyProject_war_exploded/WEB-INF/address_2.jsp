@@ -19,7 +19,7 @@
 <body>
 <header data-am-widget="header" class="am-header am-header-default header">
     <div class="am-header-left am-header-nav">
-        <a href="javascript:history.go(-1)" class="">
+        <a href="${pageContext.request.contextPath}/add_order" class="">
             <i class="am-header-icon am-icon-angle-left"></i>
         </a>
     </div>

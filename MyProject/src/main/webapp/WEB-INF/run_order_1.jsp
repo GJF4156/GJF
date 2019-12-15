@@ -35,7 +35,7 @@
     </li>
 
 </ul>
-${msg}
+<span style="font-size: 25px;margin: 15px;">${msg}</span>
 <c:forEach items="${ORDER_LIST_BY_STATE1}" var="order1">
     <div style="margin-bottom: 10px;padding-bottom: 5px">
         <div class="c-comment">

@@ -37,7 +37,7 @@
     <li class="current"><a href="${pageContext.request.contextPath}/order/queryOrderByOrderState?order_state=2">进行中</a></li>
     <li ><a href="${pageContext.request.contextPath}/order/queryOrderByOrderState?order_state=1">已完成</a></li>
 </ul>
-${msg}
+<span style="font-size: 25px;margin: 15px;">${msg}</span>
 <c:forEach items="${ORDER_LIST_BY_STATE2}" var="order2">
     <div style="margin-bottom: 10px;padding-bottom: 5px">
         <div class="c-comment">

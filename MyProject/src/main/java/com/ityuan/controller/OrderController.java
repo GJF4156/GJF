@@ -114,11 +114,11 @@ public class OrderController {
             order.setReceipt(receipt);
             orders = orderService.queryOrderByOrderState(order);
             System.out.println(orders);
-            if (orders != null) {
+            if (orders.size()>0) {
                 model.addAttribute("ORDER_LIST_BY_STATE1", orders);
                 return "run_order_1";
             } else {
-                model.addAttribute("msg", "还没有已完成订单哟");
+                model.addAttribute("msg", "您还没有已完成订单哟");
                 return "run_order_1";
             }
         } else if (order_state==2) {
@@ -126,11 +126,11 @@ public class OrderController {
             order.setReceipt(receipt);
             orders = orderService.queryOrderByOrderState(order);
             System.out.println(orders);
-            if (orders != null) {
+            if (orders.size()>0) {
                 model.addAttribute("ORDER_LIST_BY_STATE2", orders);
                 return "run_order_2";
             } else {
-                model.addAttribute("msg", "还没有抢到订单哟");
+                model.addAttribute("msg", "您还没有抢到订单哟");
                 return "run_order_2";
             }
         } else {

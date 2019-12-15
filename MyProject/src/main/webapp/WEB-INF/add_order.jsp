@@ -71,7 +71,7 @@
 <body>
 <header data-am-widget="header" class="am-header am-header-default header">
     <div class="am-header-left am-header-nav">
-        <a href="javascript:history.go(-1)" class="">
+        <a href="${pageContext.request.contextPath}/run_pool" class="">
             <i class="am-header-icon am-icon-angle-left"></i>
         </a>
     </div>
@@ -81,8 +81,6 @@
     </div>
 </header>
 <form action="${pageContext.request.contextPath}/order/createOrder">
-    <%--<input type="hidden" name="uid" value="${USER.uid}"/>--%>
-    <%--<input type="hidden" name="username" value="${USER.username}"/>--%>
     <a href="${pageContext.request.contextPath}/address/selectAllAddress?testId=2">
         <input class="add_input" name="" id="" type="text" style="height: 6%;padding-left: 8px"
                placeholder="请选择您要送达的地址" readonly="readonly">
@@ -109,7 +107,7 @@
         <input type="radio" name="other_requirements" value="限美女" class="girl">限女生
     </div>
     <div class="radio">
-        <input type="radio" name="other_requirements" value="限男生" class="boy">限女生
+        <input type="radio" name="other_requirements" value="限男生" class="boy">限男生
     </div>
     <div style="background: white;margin-top: 33px;padding-bottom: 4px">
         <span class="add_input1" style="color: gray">感谢回馈： </span>￥

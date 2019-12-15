@@ -19,7 +19,7 @@
 <body>
 <header data-am-widget="header" class="am-header am-header-default header">
     <div class="am-header-left am-header-nav">
-        <a href="javascript:history.go(-1)" class="">
+        <a href="${pageContext.request.contextPath}/member" class="">
             <i class="am-header-icon am-icon-angle-left"></i>
         </a>
     </div>
@@ -28,11 +28,7 @@
         <a href="${pageContext.request.contextPath}/add_address" class="blue" style="color: #79bbff">添加</a>
     </div>
 </header>
-<a href="javascript:history.go(-1)">
-
-
     <ul class="address-list">
-
         <c:forEach items="${ADDRESSLIST}" var="a">
             <li class="curr">
                 <p>收货人：${a.consignee}&nbsp;&nbsp;${a.cphone}</p>
@@ -48,6 +44,5 @@
             </li>
         </c:forEach>
     </ul>
-</a>
 </body>
 </html>
