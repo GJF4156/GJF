@@ -182,4 +182,9 @@ public class pageController {
         return "detail";
     }
 
+    @RequestMapping("/add_card")
+    public String add_card() {
+        return "add_card";
+    }
+
 }

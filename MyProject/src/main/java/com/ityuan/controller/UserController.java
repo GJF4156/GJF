@@ -54,6 +54,14 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        //清楚session
+        session.invalidate();
+        //重定向到登陆界面
+        return "redirect:../toMemberLogin";
+    }
+
     /**
      * 找回密码
      * @param model
@@ -83,6 +91,14 @@ public class UserController {
         return "toBackPassword";
     }
 
+    /**
+     * 修改用户信息
+     * @param user
+     * @param model
+     * @param request
+     * @param session
+     * @return
+     */
     @RequestMapping("/updateUserInfo")
     public String updateUserInfo(User user,Model model,HttpServletRequest request,HttpSession session){
         user.setUid(((User) request.getSession().getAttribute("USER")).getUid());

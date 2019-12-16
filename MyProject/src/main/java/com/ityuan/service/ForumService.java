@@ -24,4 +24,11 @@ public interface ForumService {
      * @return
      */
     public int deleteForum(int fid);
+
+    /**
+     * 根据fid查询帖子
+     * @param fid
+     * @return
+     */
+    public Forum queryForumByFid(int fid);
 }

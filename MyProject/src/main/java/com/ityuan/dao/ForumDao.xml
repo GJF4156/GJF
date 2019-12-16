@@ -16,4 +16,9 @@
     <delete id="deleteForum" parameterType="int">
         delete from forum where fid=#{fid}
     </delete>
+
+    <!--根据fid查询帖子-->
+    <select id="selectForumByFid" parameterType="int" resultType="Forum">
+        select * from forum where fid=#{fid}
+    </select>
 </mapper>

@@ -27,4 +27,9 @@ public class ForumServiceImpl implements ForumService {
     public int deleteForum(int fid) {
         return forumDao.deleteForum(fid);
     }
+
+    @Override
+    public Forum queryForumByFid(int fid) {
+        return forumDao.selectForumByFid(fid);
+    }
 }

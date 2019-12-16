@@ -25,4 +25,11 @@ public interface ForumDao {
      */
     public int deleteForum(int fid);
 
+    /**
+     * 根据fid查询帖子
+     * @param fid
+     * @return
+     */
+    public Forum selectForumByFid(int fid);
+
 }
