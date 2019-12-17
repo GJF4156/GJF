@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -42,12 +43,12 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(String phone, String password, Model model, HttpSession session) {
         User user = userService.selectUser(phone, password);
         if (user != null) {
             session.setAttribute("USER", user);
-            return "redirect:../member";
+            return "member";
         } else {
             model.addAttribute("msg", "账号或密码错误，请重新输入！");
             return "toMemberLogin";

@@ -32,5 +32,12 @@
         <!--设置允许上传文件最大值，单位为字节-->
         <property name="maxUploadSize" value="600000"/>
     </bean>
+    <!--配置拦截器-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.ityuan.controller.MInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
 </beans>
