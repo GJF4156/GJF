@@ -48,11 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        添加点击事件
         addCityIv.setOnClickListener(this);
         moreIv.setOnClickListener(this);
-
         fragmentList = new ArrayList<>();
         cityList = DBManager.queryAllCityName();  //获取数据库包含的城市信息列表
         imgList = new ArrayList<>();
-
         if (cityList.size()==0) {
             cityList.add("北京");
         }
@@ -94,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 outLayout.setBackgroundResource(R.mipmap.bg3);
                 break;
         }
-
     }
     private void setPagerListener() {
         /* 设置监听事件*/
@@ -114,23 +111,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
     private void initPoint() {
 //        创建小圆点 ViewPager页面指示器的函数
         for (int i = 0; i < fragmentList.size(); i++) {
             ImageView pIv = new ImageView(this);
             pIv.setImageResource(R.mipmap.a1);
-            pIv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            pIv.setLayoutParams(new LinearLayout
+                    .LayoutParams(LinearLayout.LayoutParams
+                    .WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) pIv.getLayoutParams();
             lp.setMargins(0,0,20,0);
             imgList.add(pIv);
             pointLayout.addView(pIv);
         }
         imgList.get(imgList.size()-1).setImageResource(R.mipmap.a2);
-
-
     }
-
     private void initPager() {
         /* 创建Fragment对象，添加到ViewPager数据源当中*/
         for (int i = 0; i < cityList.size(); i++) {
@@ -141,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fragmentList.add(cwFrag);
         }
     }
-
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();

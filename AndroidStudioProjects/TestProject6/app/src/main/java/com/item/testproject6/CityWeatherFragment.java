@@ -41,7 +41,6 @@ public class CityWeatherFragment extends BaseFragment implements View.OnClickLis
     String city;
     private SharedPreferences pref;
     private int bgNum;
-
     //        换壁纸的函数
     public void exchangeBg(){
         pref = getActivity().getSharedPreferences("bg_pref", MODE_PRIVATE);
@@ -57,7 +56,6 @@ public class CityWeatherFragment extends BaseFragment implements View.OnClickLis
                 outLayout.setBackgroundResource(R.mipmap.bg3);
                 break;
         }
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,7 +71,6 @@ public class CityWeatherFragment extends BaseFragment implements View.OnClickLis
         loadData(url);
         return view;
     }
-
     @Override
     public void onSuccess(String result) {
 //        解析并展示数据
@@ -92,7 +89,6 @@ public class CityWeatherFragment extends BaseFragment implements View.OnClickLis
         if (!TextUtils.isEmpty(s)) {
             parseShowData(s);
         }
-
     }
     private void parseShowData(String result) {
 //        使用gson解析数据
@@ -118,8 +114,11 @@ public class CityWeatherFragment extends BaseFragment implements View.OnClickLis
         List<WeatherBean.ResultsBean.WeatherDataBean> futureList = resultsBean.getWeather_data();
         futureList.remove(0);
         for (int i = 0; i < futureList.size(); i++) {
-            View itemView = LayoutInflater.from(getActivity()).inflate(R.layout.item_main_center, null);
-            itemView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            View itemView = LayoutInflater.from(getActivity())
+                    .inflate(R.layout.item_main_center, null);
+            itemView.setLayoutParams(new LinearLayout
+                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
             futureLayout.addView(itemView);
             TextView idateTv = itemView.findViewById(R.id.item_center_tv_date);
             TextView iconTv = itemView.findViewById(R.id.item_center_tv_con);
