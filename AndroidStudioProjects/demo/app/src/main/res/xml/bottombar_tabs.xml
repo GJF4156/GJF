@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_home"
+        title="首页"
+        barColorWhenSelected="#FFFFFF" />
+    <tab
+        id="@+id/tab_sort"
+        icon="@drawable/ic_sort"
+        title="分类"
+        barColorWhenSelected="#FFFFFF" />
+    <tab
+        id="@+id/tab_shop"
+        icon="@drawable/ic_shop"
+        title="商城"
+        barColorWhenSelected="#FFFFFF" />
+    <tab
+        id="@+id/tab_me"
+        icon="@drawable/ic_me"
+        title="我的"
+        barColorWhenSelected="#FFFFFF" />
+</tabs>
