@@ -1,16 +1,15 @@
 package com.example.demo.activity;
 
-import android.annotation.SuppressLint;
-import android.widget.SearchView;
-import android.os.Bundle;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.demo.R;
-import com.example.demo.Utils.DividerItemDecoration;
-import com.example.demo.adapter.RvAdapter;
+import com.example.demo.adapter.SearchRvAdapter;
 import com.example.demo.base.BaseActivity;
 import com.example.demo.beans.SortsBean;
 import com.example.demo.myView.CustomDialog;
@@ -22,67 +21,50 @@ import org.xutils.x;
 
 import java.util.List;
 
-@ContentView(R.layout.activity_search)//相当于setContentView(R.layout.activity_search);
-public class SearchActivity extends BaseActivity {
-    @ViewInject(R.id.recyclerview)//注解形式初始化组建，类似于findViewById();
-    private RecyclerView recyclerView;
-    @ViewInject(R.id.searchView)
-    private SearchView searchView;
-    private String url, url1;
-    private List<SortsBean.NewslistBean> mStrs = null;//可通过获取网络数据进行实例化,保存请求来的数据
+@ContentView(R.layout.activity_speach_search)
+public class SpeachSearchActivity extends BaseActivity {
+    private String name, url, url1;
+    private List<SortsBean.NewslistBean> dataBeansList;
+    @ViewInject(R.id.speach_search_recyclerview)
+    private RecyclerView SpeachSearchRecyclerview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        //初始化请求路劲url
-        //url1 = "https://service.xiaoyuan.net.cn/garbage/index/search?kw=";//已经被限制请求次数
-        //url1="https://laji.lr3800.com/api.php?name=";//免费无限制，不需要账号
-        //url="https://www.lajiflw.cn/rubbish/category";//根据类别检索垃圾（不全），免费不要账号
-        url1 = "http://api.tianapi.com/txapi/lajifenlei/index?key=a24ff874e046c94eb472e3a7692900e3&word=";//需要账号APIKEY，有次数限制，普通会员5000次
+        url1 = "http://api.tianapi.com/txapi/lajifenlei/index?key=a24ff874e046c94eb472e3a7692900e3&word=";
+        try {
+            Intent intent = getIntent();
+            name = intent.getStringExtra("name");
+        } catch (Exception e) {
+            Log.i("animee", "程序出现问题了！！");
+        }
         //设置recyclerview的布局管理器
-        recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
+        SpeachSearchRecyclerview.setLayoutManager(new LinearLayoutManager(SpeachSearchActivity.this));
         //设置recyclerview每项的分割线
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-        //设置searchview的监听事件
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {//点击 搜索 按钮后出发的事件
-                url = url1 + query;
-                loadData(url);//开始请求数据，传入url
-                url = url1;
-                return true;
-            }
-
-            //当输入框内容变化时调用的方法
-            @Override
-            public boolean onQueryTextChange(String newText) {//输入框内文本变化时触发的事件
-//                url = url1 + newText;
-//                loadData(url);
-//                url=url1;
-                return false;
-            }
-        });
+//        SpeachSearchRecyclerview.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        url = url1 + name;
+        loadData(url);
+        url = url1;
     }
 
-    //请求成功时回掉的函数
+    /**
+     * 书记请求成功回调的方法，对请求的数据进行进一步处理
+     * @param result 请求的结果
+     */
     @Override
     public void onSuccess(String result) {
         SortsBean sortsBean = new Gson().fromJson(result, SortsBean.class);
         if (sortsBean.getCode() == 200) {
-            mStrs = sortsBean.getNewslist();
-//        Log.d("TAG","===============\n\n\n"+mStrs);
-            //设置recyclerview的适配器，并设置点击事件
-            recyclerView.setAdapter(new RvAdapter(SearchActivity.this, mStrs, new RvAdapter.OnItemClickListener() {
-                @SuppressLint("ResourceType")
+            dataBeansList = sortsBean.getNewslist();
+            SpeachSearchRecyclerview.setAdapter(new SearchRvAdapter(SpeachSearchActivity.this, dataBeansList, new SearchRvAdapter.OnItemClickListener() {
                 @Override
                 public void onClick(int position) {
-                    //显示dialog
-                    toshowDialog(mStrs, position);
+                    toshowDialog(dataBeansList, position);
                 }
             }));
         } else {
-            Toast.makeText(SearchActivity.this, "没有搜索到或暂未收入......", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SpeachSearchActivity.this, "没有搜索到或暂未收入......", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -93,16 +75,13 @@ public class SearchActivity extends BaseActivity {
      * @param position 列表下标
      */
     public void toshowDialog(List<SortsBean.NewslistBean> mStrs, int position) {
-        CustomDialog dialog = new CustomDialog(SearchActivity.this, R.style.custom_dialog);
+        CustomDialog dialog = new CustomDialog(SpeachSearchActivity.this, R.style.custom_dialog);
         dialog.setName(mStrs.get(position).getName())
                 .setDescription(mStrs.get(position).getExplain())
                 .setChangjian("常见包括")
                 .setChangjiancontent(mStrs.get(position).getContain())
                 .setDelivery("投放要求")
                 .setDeliverycontent(mStrs.get(position).getTip());
-        /**
-         * 根据类型的不同显示不同的结果
-         */
         switch (mStrs.get(position).getType()) {
             case 0:
                 //可回收垃圾
@@ -148,5 +127,16 @@ public class SearchActivity extends BaseActivity {
                 break;
         }
         dialog.show();
+    }
+
+    /**
+     * 返回键触发的事件
+     * 点击返回键时，跳转到指定的页面
+     */
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(SpeachSearchActivity.this,SpeachActivity.class));
+        finish();
     }
 }

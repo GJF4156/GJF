@@ -57,7 +57,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
      * @param holder
      * @param position
      */
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({ "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull RvAdapter.ViewHolder holder, final int position) {
         holder.rubbish_name_tv.setText(mDataBeanList.get(position).getName() + ":");
@@ -66,24 +66,32 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
                 //可回收垃圾
                 holder.icont_font_tv.setText(R.string.recyclableFont);
                 holder.sort_name_tv.setText("可回收垃圾");
+                holder.icont_font_tv.setTextColor(mContext.getColor(R.color.recyclableFontColor));
+                holder.sort_name_tv.setTextColor(mContext.getColor(R.color.recyclableFontColor));
                 break;
             case 1:
                 //有害垃圾
                 holder.icont_font_tv.setText(R.string.hazardousFont);
                 holder.sort_name_tv.setText("有害垃圾");
+                holder.icont_font_tv.setTextColor(mContext.getColor(R.color.hazardousFontColor));
+                holder.sort_name_tv.setTextColor(mContext.getColor(R.color.hazardousFontColor));
                 break;
             case 2:
                 //厨余垃圾
                 holder.icont_font_tv.setText(R.string.kitchenFont);
                 holder.sort_name_tv.setText("厨余垃圾");
+                holder.icont_font_tv.setTextColor(mContext.getColor(R.color.kitchenFontColor));
+                holder.sort_name_tv.setTextColor(mContext.getColor(R.color.kitchenFontColor));
                 break;
             case 3:
                 //其他垃圾
                 holder.icont_font_tv.setText(R.string.otherFont);
                 holder.sort_name_tv.setText("其他垃圾");
+                holder.icont_font_tv.setTextColor(mContext.getColor(R.color.otherFontColor));
+                holder.sort_name_tv.setTextColor(mContext.getColor(R.color.otherFontColor));
                 break;
             default:
-                holder.icont_font_tv.setText(R.string.notincludedFont);
+
                 break;
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

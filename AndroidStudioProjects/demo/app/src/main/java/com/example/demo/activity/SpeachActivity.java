@@ -1,36 +1,47 @@
 package com.example.demo.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.demo.BottomBarLayoutActivity;
 import com.example.demo.R;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.example.demo.base.BaseActivity;
+import com.example.demo.beans.SortsBean;
+import com.google.gson.Gson;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
-public class SpeachActivity extends AppCompatActivity implements View.OnClickListener {
+
+import org.xutils.x;
+
+import java.util.List;
+
+public class SpeachActivity extends BaseActivity implements View.OnClickListener {
     private TextView speachtv;
     private ImageView speachbtn;
 
+    private List<SortsBean.NewslistBean> mStrs = null;//保存网络获取的数据
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speach);
         speachtv=findViewById(R.id.speachtv);
         speachbtn=findViewById(R.id.speachbtn);
-        speachbtn.setOnClickListener(this);
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"=5e2f01df");
+        speachbtn.setOnClickListener(this);
     }
 
     /**
@@ -43,7 +54,6 @@ public class SpeachActivity extends AppCompatActivity implements View.OnClickLis
         recognizerDialog.setParameter(SpeechConstant.LANGUAGE, "zh_cn");//语种，这里可以有zh_cn和en_us
         recognizerDialog.setParameter(SpeechConstant.ACCENT, "mandarin");//设置口音，这里设置的是汉语普通话 具体支持口音请查看讯飞文档，
         recognizerDialog.setParameter(SpeechConstant.TEXT_ENCODING, "utf-8");//设置编码类型
-
         //其他设置请参考文档http://www.xfyun.cn/doccenter/awd
         //3.设置讯飞识别语音后的回调监听
         recognizerDialog.setListener(new RecognizerDialogListener() {
@@ -52,17 +62,16 @@ public class SpeachActivity extends AppCompatActivity implements View.OnClickLis
                 if (!b) {
                     Log.i("讯飞识别的结果", recognizerResult.getResultString());
                     speachtv.setText(parseJsonVoice(recognizerResult.getResultString()));
-
-
-
+                    Intent intent=new Intent(SpeachActivity.this,SpeachSearchActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("name",speachtv.getText().toString());
+                    startActivity(intent);
                 }
             }
-
             @Override
             public void onError(SpeechError speechError) {//返回错误
                 Log.e("返回的错误码", speechError.getErrorCode() + "");
             }
-
         });
         //显示讯飞语音识别视图
         recognizerDialog.show();
@@ -85,8 +94,6 @@ public class SpeachActivity extends AppCompatActivity implements View.OnClickLis
         Log.i("识别结果", stringBuffer.toString());
         return stringBuffer.toString();
     }
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -94,5 +101,12 @@ public class SpeachActivity extends AppCompatActivity implements View.OnClickLis
                 initSpeech(this);
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(SpeachActivity.this,BottomBarLayoutActivity.class));
+        finish();
     }
 }

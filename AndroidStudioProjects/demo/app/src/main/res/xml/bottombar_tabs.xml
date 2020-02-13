@@ -3,21 +3,17 @@
     <tab
         id="@+id/tab_home"
         icon="@drawable/ic_home"
-        title="首页"
-        barColorWhenSelected="#FFFFFF" />
+        title="home"/>
     <tab
         id="@+id/tab_sort"
         icon="@drawable/ic_sort"
-        title="分类"
-        barColorWhenSelected="#FFFFFF" />
+        title="sort"/>
     <tab
         id="@+id/tab_shop"
         icon="@drawable/ic_shop"
-        title="商城"
-        barColorWhenSelected="#FFFFFF" />
+        title="shop"/>
     <tab
         id="@+id/tab_me"
         icon="@drawable/ic_me"
-        title="我的"
-        barColorWhenSelected="#FFFFFF" />
+        title="me" />
 </tabs>
