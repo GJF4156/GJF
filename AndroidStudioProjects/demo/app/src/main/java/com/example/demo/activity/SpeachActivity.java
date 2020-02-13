@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.demo.BottomBarLayoutActivity;
 import com.example.demo.R;
 import com.alibaba.fastjson.JSON;
@@ -17,15 +15,12 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.base.BaseActivity;
 import com.example.demo.beans.SortsBean;
-import com.google.gson.Gson;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
-
-import org.xutils.x;
 
 import java.util.List;
 
@@ -106,7 +101,7 @@ public class SpeachActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(SpeachActivity.this,BottomBarLayoutActivity.class));
+        startActivity(new Intent(SpeachActivity.this, BottomBarLayoutActivity.class));
         finish();
     }
 }
