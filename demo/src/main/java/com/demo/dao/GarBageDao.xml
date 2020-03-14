@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.GarBageDao">
+    <!--  增加一条数据  -->
+    <insert id="insert" parameterType="GarBage">
+		INSERT INTO garbage VALUES(#{gname},#{gtype},#{aipre},#{explain},#{contain},#{tip})
+	</insert>
+    <!-- 无条件查询所有数据   -->
+    <select id="select" resultType="GarBage">
+        select * from garbage
+    </select>
+    <!--根据名字模糊查询-->
+    <select id="selectByName" parameterType="String" resultType="GarBage">
+        select * from garbage where gname like concat('%',#{gname},'%')
+    </select>
+    <!-- 根据类型查询数据   -->
+    <select id="selectByType" parameterType="int" resultType="GarBage">
+        select * from garbage where gtype=#{gtype}
+    </select>
+    <!-- 根据id删除数据   -->
+<!--    <delete id="delete" parameterType="int">-->
+<!--        delete from garbage where id=#{id}-->
+<!--    </delete>-->
+
+
+</mapper>

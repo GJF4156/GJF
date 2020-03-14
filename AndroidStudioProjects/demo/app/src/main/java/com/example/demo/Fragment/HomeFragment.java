@@ -6,42 +6,42 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.demo.Fragment.Presenter.IFragmentHomeP;
+import com.example.demo.Fragment.Presenter.impl.FragmentHomePImpl;
+import com.example.demo.Fragment.View.IFragmentHomeV;
 import com.example.demo.IconFont.FontIconView;
 import com.example.demo.R;
 import com.example.demo.RecoveryActivity;
 import com.example.demo.Utils.DividerItemDecoration;
 import com.example.demo.Utils.ImageUtils;
-import com.example.demo.activity.SearchActivity;
 import com.example.demo.activity.SpeachActivity;
 import com.example.demo.activity.WebActivity;
 import com.example.demo.adapter.NewsAdapter;
 import com.example.demo.base.BaseFragment;
 import com.example.demo.beans.NewsBeans;
-import com.google.gson.Gson;
-
-import org.xutils.x;
 
 import java.util.List;
 
-public class HomeFragment extends BaseFragment implements View.OnClickListener{
+public class HomeFragment extends BaseFragment implements View.OnClickListener, IFragmentHomeV {
     private Intent intent;
     private FontIconView center_ar_icon;
     private FontIconView center_voice_icon;
     private FontIconView center_recovery_icon;
     private String url;
     private RecyclerView NewsRv;
-    private ImageView NewsImg;
+    private ImageView NewsImg,imageView;
     private List<NewsBeans.NewslistBean> newslistBeanList;
+
+    private IFragmentHomeP mPresenter;
 
     public HomeFragment() {
     }
@@ -49,12 +49,22 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ImageView imageView = view.findViewById(R.id.main_image);
+
+        mPresenter=new FragmentHomePImpl(this);
+        mPresenter.getData();
+        //初始化数据
+        init(view);
+        return view;
+    }
+
+    private void init(View view) {
+        imageView = view.findViewById(R.id.main_image);
         center_ar_icon=view.findViewById(R.id.center_ar_icon);
         center_voice_icon=view.findViewById(R.id.center_voice_icon);
         center_recovery_icon=view.findViewById(R.id.center_recovery_icon);
         NewsRv=view.findViewById(R.id.news_rv);
         NewsImg=view.findViewById(R.id.news_img);
+
         //设置recyclerview的布局管理器
         NewsRv.setLayoutManager(new LinearLayoutManager(getActivity()));
         //设置recyclerview每项的分割线
@@ -62,16 +72,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         center_ar_icon.setOnClickListener(this);
         center_voice_icon.setOnClickListener(this);
         center_recovery_icon.setOnClickListener(this);
+
         Drawable drawable = getActivity().getDrawable(R.mipmap.main);
         //将Drawable转化为Bitmap
         Bitmap bitmap = ImageUtils.drawableToBitmap(drawable);
         //获取圆角图片
         Bitmap roundBitmap = ImageUtils.getRoundedCornerBitmap(bitmap, 25.0f);
         imageView.setImageBitmap(roundBitmap);
-        url="http://api.tianapi.com/huanbao/index?key=a24ff874e046c94eb472e3a7692900e3&num=40";//环保咨询接口
-        loadData(url);
-        return view;
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -90,10 +99,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     }
 
     @Override
-    public void onSuccess(String result) {
-        NewsBeans newsBeans=new Gson().fromJson(result,NewsBeans.class);
-        newslistBeanList=newsBeans.getNewslist();
-//        Toast.makeText(getActivity(),"数据请求成功...",Toast.LENGTH_SHORT).show();
+    public void getData(List<NewsBeans.NewslistBean> newslistBeanList) {
         NewsRv.setAdapter(new NewsAdapter(getActivity(), newslistBeanList, new NewsAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position) {
