@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">E家环保</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--  底部导航栏文本  -->
+    <string name="home_tv_bar">首页</string>
+    <string name="sort_tv_bar">分类</string>
+    <string name="shop_tv_bar">商城</string>
+    <string name="me_tv_bar">我的</string>
+    <!--  中间导航按钮  -->
+    <!--  AR识别  -->
+    <string name="center_AR_bar">&#xe608;</string>
+    <string name="center_AR_text">扫一扫</string>
+    <!--语音识别-->
+    <string name="center_voice_bar">&#xe607;</string>
+    <string name="center_voice_text">语音识别</string>
+    <!--  回收  -->
+    <string name="center_recovery_bar">&#xe633;</string>
+    <string name="center_recovery_text">回收站</string>
+    <!--  回收类别  -->
+    <string name="newspaper">&#xe604;</string>
+    <string name="newspaper_text">报纸</string>
+    <string name="suliao">&#xe63e;</string>
+    <string name="suliao_text">塑料</string>
+    <string name="zhixiang">&#xe61c;</string>
+    <string name="zhixiang_text">纸箱</string>
+    <string name="boli">&#xe62e;</string>
+    <string name="boli_text">玻璃</string>
+    <string name="baoxianhe">&#xe6d6;</string>
+    <string name="baoxianhe_text">保鲜盒</string>
+    <string name="jiuping">&#xe611;</string>
+    <string name="jiuping_text">酒瓶</string>
+    <string name="wanju">&#xe60e;</string>
+    <string name="wanju_text">玩具</string>
+    <string name="dianqi">&#xe634;</string>
+    <string name="dianqi_text">电器</string>
+    <!--  更多  -->
+    <string name="more">&#xe614;</string>
+    <!--  其他文本  -->
+    <string name="kepu">环保新闻</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--测试IconFont-->
+    <string name="test">&#xe608;</string>
+    <!--  iconfont  -->
+    <!--  可回收  -->
+    <string name="recyclableFont">&#xe627;</string>
+    <!--  厨余垃圾  -->
+    <string name="kitchenFont">&#xe626;</string>
+    <!--  有害垃圾  -->
+    <string name="hazardousFont">&#xe625;</string>
+    <!--  其他垃圾  -->
+    <string name="otherFont">&#xe624;</string>
+    <!--  干垃圾  -->
+    <string name="dryFont">&#xe628;</string>
+    <!--  湿垃圾  -->
+    <string name="wetFont">&#xe622;</string>
+    <!--  未收录  -->
+    <string name="notincludedFont">&#xe62c;</string>
+    <!--  客服  -->
+    <string name="kefu">&#xe60f;</string>
+    <!--  购物车  -->
+    <string name="shop">&#xe602;</string>
+    <!--  地址  -->
+    <string name="address">&#xe610;</string>
+    <!--  类型  -->
+    <string name="sort">&#xe617;</string>
+    <!--  电话  -->
+    <string name="phone">&#xe64c;</string>
+    <!--  待处理  -->
+    <string name="pending">&#xe618;</string>
+    <!--  已处理  -->
+    <string name="processed">&#xe619;</string>
+    <!--  已完成  -->
+    <string name="completed">&#xe61a;</string>
+    <!--  右跳转  -->
+    <string name="tiaozhuan">&#xe616;</string>
+    <string name="ddhk_header_back">返回</string>
+    <string name="mine_username">Reflection</string>
+    <string name="mine_phone">173****4565</string>
+    <string name="mine_description">致力于回收，让生活更美好</string>
+    <string name="mine_card">我的收藏</string>
+    <string name="mine_card_num">20</string>
+    <string name="mine_card_desc">条收藏</string>
+    <string name="mine_card2">我的订单</string>
+    <string name="mine_card2_num">5</string>
+    <string name="mine_card2_desc">个订单</string>
+    <string name="mine_jifen">钱包</string>
+    <string name="mine_info">通知</string>
+    <string name="mine_setting">设置</string>
+    <string name="mine_about">关于我们</string>
+    <string name="mine_img_sign">&#xe654;</string>
+    <string name="mine_img_minsetting">&#xe613;</string>
+    <string name="mine_img_arrowToRight">&#xe616;</string>
+    <string name="sign_img_2">&#xe668;</string>
+    <string name="sign">签到</string>
+    <string name="sign_tv1">已连续签到天数</string>
+    <string name="sign_tv2">3</string>
+    <string name="sign_tv4">连续登陆7天将获得奖励</string>
+    <string name="sign_tv3">确认</string>
+    <string name="sign_img_1">&#xe681;</string>
+    <string name="personal_set_id">账号</string>
+    <string name="personal_set_name">昵称</string>
+    <string name="personal_set_gender">性别</string>
+    <string name="personal_set_birthdate">生日</string>
+    <string name="personal_set_address">地址</string>
+    <string name="personal_set_safe">账户安全</string>
+    <string name="personal_set_btn">保 存</string>
+    <string name="login_img_phone">&#xe615;</string>
+    <string name="login_img_psw">&#xe605;</string>
+    <string name="jifen_tv1">我的零钱</string>
+    <string name="jifen_tv2">100元</string>
+    <string name="jifen_tv3">充值</string>
+    <string name="jifen_tv4">提现</string>
+</resources>

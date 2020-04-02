@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0008B6</color>
+    <color name="colorPrimary2">#008577</color>
+    <color name="colorPrimaryDark">#2CA874</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorIconAndTextNormal">#5F5F5F</color>
+    <color name="colorIconAndTextSelect">#0008B6</color>
+    <color name="colorWhite">#8BC34A</color>
+    <!--  全局背景颜色  -->
+    <color name="background">#f5f5f5</color>
+    <color name="text_color">#fff</color>
+    <!--  底部导航栏文字颜色  -->
+    <color name="select_text_color">#6378f5</color>
+    <color name="no_select_text_color">#8a8a8a</color>
+    <!--  知识小科普文本颜色  -->
+    <color name="Article_title_color">#070707</color>
+    <color name="Article_describe_color">#525252</color>
+    <color name="Article_date_color">#969696</color>
+
+    <!--  分类字体图标颜色  -->
+    <!--  可回收  -->
+    <color name="recyclableFontColor">#6369F3</color>
+    <!--  有害垃圾  -->
+    <color name="hazardousFontColor">#ED706A</color>
+    <!--  厨余垃圾  -->
+    <color name="kitchenFontColor">#2CA874</color>
+    <!--  其他垃圾  -->
+    <color name="otherFontColor">#2B2B29</color>
+    <!--  未收录  -->
+    <color name="notincludedFontColor">#2CA874</color>
+    <color name="purple_button">#2CA874</color>
+    <color name="gray">#808080</color>
+    <color name="qianhui">#E0E0E0</color>
+    <color name="black">#000000</color>
+    <color name="white_c">#FFFFFF</color>
+    <color name="colorMainBG">#1B5236</color>
+    <color name="colorPhone">#7A90D1ED</color>
+    <color name="colorPhonebord">#CFDFE6</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRedNum">#FF0000</color>
+    <color name="colorWordsGray">#8b8b8b</color>
+    <color name="colorLine">#D5D5D5</color>
+    <color name="colorSign">#FFD700</color>
+    <color name="colorBG">#ededed</color>
+    <color name="colorlightGray">#f1f4f2</color>
+</resources>

@@ -1,0 +1,2 @@
+include ':app', ':DbLibrary'
+rootProject.name='demo'
