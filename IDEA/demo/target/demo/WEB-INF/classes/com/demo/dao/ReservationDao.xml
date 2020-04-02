@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.ReservationDao">
+
+    <insert id="insert" parameterType="Reservation">
+        insert into reservation
+        values (#{id},#{gotime},#{person},#{telephone},#{address},#{sort},#{uid},#{status},#{ordertime})
+    </insert>
+
+    <delete id="delete" parameterType="String">
+        delete from reservation where id=#{id}
+    </delete>
+
+    <select id="select" parameterType="String" resultType="Reservation">
+        select * from reservation where uid=#{uid}
+    </select>
+
+    <select id="selectById" parameterType="String" resultType="Reservation">
+        select * from reservation where id=#{id}
+    </select>
+
+    <update id="update" parameterType="Reservation">
+        update reservation
+        <set>
+            <if test="gotime != null and gotime != '' ">
+                gotime=#{gotime}
+            </if>
+            <if test="person != null and person != '' ">
+                person=#{person}
+            </if>
+            <if test="telephone != null and telephone != '' ">
+                telephone=#{telephone}
+            </if>
+            <if test="address != null and address != '' ">
+                address=#{address}
+            </if>
+            <if test="sort != null and sort != '' ">
+                sort=#{sort}
+            </if>
+            <if test="uid != null and uid != '' ">
+                uid=#{uid}
+            </if>
+            <if test="status != null and status != '' ">
+                status=#{status}
+            </if>
+            <if test="ordertime != null and ordertime != '' ">
+                ordertime=#{ordertime}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>

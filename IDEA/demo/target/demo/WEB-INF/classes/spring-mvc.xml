@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--开启springMVC框架注解的支持-->
+    <mvc:annotation-driven/>
+<!--    <mvc:resources location="/css/" mapping="/css/**"/>-->
+<!--    <mvc:resources location="/fonts/" mapping="/fonts/**"/>-->
+<!--    <mvc:resources location="/images/" mapping="/images/**"/>-->
+<!--    <mvc:resources location="/js/" mapping="/js/**"/>-->
+
+    <!--配置包扫描器，扫描@Controller注解类-->
+    <context:component-scan base-package="com.demo">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!--视图解析器对象-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--配置文件上传和下载的:multipartResolver-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--设置请求编码格式，处理上传文件名中文乱码-->
+        <property name="defaultEncoding" value="utf-8"/>
+        <!--设置允许上传文件最大值，单位为字节-->
+        <property name="maxUploadSize" value="600000"/>
+    </bean>
+    <!--配置拦截器-->
+    <!--<mvc:interceptors>-->
+    <!--<mvc:interceptor>-->
+    <!--<mvc:mapping path="/**"/>-->
+    <!--<bean class="com.ityuan.controller.MInterceptor"/>-->
+    <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+</beans>
